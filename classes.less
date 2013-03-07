@@ -56,9 +56,9 @@
 }
 
 .multi-box-shadow( @shadow1, @shadow2: transparent 0 0 0 ) {
-    -moz-box-shadow: @shadow1, @shadow2;
-    -webkit-box-shadow: @shadow1, @shadow2;
-    box-shadow: @shadow1, @shadow2;
+    	-moz-box-shadow: @shadow1, @shadow2;
+    	-webkit-box-shadow: @shadow1, @shadow2;
+    	box-shadow: @shadow1, @shadow2;
 }
 
 .background-size( 
@@ -92,8 +92,8 @@
 	@switch : 100%
 ) {
 	background-color:  @end;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
-    background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+    	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
+    	background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
 	background-image: -moz-linear-gradient(top, @begin, @end @switch);
 	background-image: -o-linear-gradient(top, @begin, @end @switch);
 	background-image: -khtml-linear-gradient(top, @begin, @end @switch);
