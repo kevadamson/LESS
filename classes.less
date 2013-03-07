@@ -1,0 +1,147 @@
+.rounded( @radius: 3px ) {
+  -webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+	     -o-border-radius: @radius;
+	 -khtml-border-radius: @radius;
+	 	-ms-border-radius: @radius;
+	        border-radius: @radius;		
+}
+
+.border-radius( @topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0 ) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	   -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	     -o-border-radius: @topleft @topright @bottomright @bottomleft;
+	 -khtml-border-radius: @topleft @topright @bottomright @bottomleft;
+	    -ms-border-radius: @topleft @topright @bottomright @bottomleft;
+	        border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.outline-radius( @radius: 3px ) {
+	-webkit-outline-radius: @radius;
+	   -moz-outline-radius: @radius;
+	     -o-outline-radius: @radius;
+	 -khtml-outline-radius: @radius;
+	    -ms-outline-radius: @radius;
+	        outline-radius: @radius;		
+}
+
+.box-shadow( 
+	@x : 2px, 
+	@y : 2px, 
+	@blur : 5px, 
+	@spread : 0, 
+	@color : rgba(0,0,0,.6)
+) {
+	-webkit-box-shadow: @x @y @blur @spread @color;
+	   -moz-box-shadow: @x @y @blur @spread @color;	
+	   	 -o-box-shadow: @x @y @blur @spread @color;
+	 -khtml-box-shadow: @x @y @blur @spread @color;
+	   	-ms-box-shadow: @x @y @blur @spread @color;
+			box-shadow: @x @y @blur @spread @color;	
+}
+
+.box-shadow-inset( 
+	@x : 2px, 
+	@y : 2px, 
+	@blur : 5px, 
+	@spread : 0, 
+	@color : rgba(0,0,0,.6)
+) {
+	-webkit-box-shadow: @x @y @blur @spread @color inset;
+	   -moz-box-shadow: @x @y @blur @spread @color inset;	
+	   	 -o-box-shadow: @x @y @blur @spread @color inset;
+	 -khtml-box-shadow: @x @y @blur @spread @color inset;
+	   	-ms-box-shadow: @x @y @blur @spread @color inset;
+			box-shadow: @x @y @blur @spread @color inset;	
+}
+
+.multi-box-shadow( @shadow1, @shadow2: transparent 0 0 0 ) {
+    -moz-box-shadow: @shadow1, @shadow2;
+    -webkit-box-shadow: @shadow1, @shadow2;
+    box-shadow: @shadow1, @shadow2;
+}
+
+.background-size( 
+	@x : auto, 
+	@y : auto 
+) {
+	-moz-background-size: @x @y;
+	-webkit-background-size: @x @y;
+	-o-background-size: @x @y;
+	-khtml-background-size: @x @y;
+	-ms-background-size: @x @y;
+	background-size: @x @y;	
+}
+
+.transition(
+	@what : all,
+	@length : 1s,
+	@easing : ease-in-out
+) {
+	-webkit-transition: @what @length @easing;
+	   -moz-transition: @what @length @easing;
+	     -o-transition: @what @length @easing;
+	 -khtml-transition: @what @length @easing;
+	    -ms-transition: @what @length @easing;
+		  	transition: @what @length @easing;			
+}
+
+.gradient-v( 
+	@begin: black, 
+	@end: white,
+	@switch : 100%
+) {
+	background-color:  @end;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
+    background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: -moz-linear-gradient(top, @begin, @end @switch);
+	background-image: -o-linear-gradient(top, @begin, @end @switch);
+	background-image: -khtml-linear-gradient(top, @begin, @end @switch);
+	background-image: -ms-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: linear-gradient(top, @begin, @end @switch);
+	background-repeat: repeat-x;
+}
+
+.gradient-h(
+	@begin: black, 
+	@end: white,
+	@switch : 100%
+) {
+	background-color: @begin;
+	background-image: -moz-linear-gradient(left,  @begin, @end @switch);
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,@begin), color-stop(@switch,@end));
+	background-image: -webkit-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: -o-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: -khtml-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: -ms-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: linear-gradient(left,  @begin 0%,@end @switch);
+	background-repeat: repeat-x;
+}
+
+.box-sizing( @type : border-box ) {
+	-webkit-box-sizing: @type;
+	   -moz-box-sizing: @type;
+	     -o-box-sizing: @type;
+	 -khtml-box-sizing: @type;
+	    -ms-box-sizing: @type;
+	        box-sizing: @type;		
+}
+
+.font-slm( @size ) {
+  	font-size: 0px + @size;
+  	font-size: 0rem + @size / @font-size;
+  	line-height: 0 + round(@line-height / @size*10000) / 10000;
+  	margin-bottom: 0px + @line-height;
+	margin-bottom: 0rem + (@line-height / @doc-font-size);
+}
+
+.font-s( @size ) {
+  	font-size: 0px + @size;
+  	font-size: 0rem + @size / @font-size;
+}
+
+.font-sl( @size ) {
+  	font-size: 0px + @size;
+  	font-size: 0rem + @size / @font-size;
+  	line-height: 0 + round(@line-height / @size*10000) / 10000;
+}
