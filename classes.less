@@ -1,5 +1,5 @@
 .rounded( @radius: 3px ) {
-  -webkit-border-radius: @radius;
+	-webkit-border-radius: @radius;
 	   -moz-border-radius: @radius;
 	     -o-border-radius: @radius;
 	 -khtml-border-radius: @radius;
@@ -56,9 +56,9 @@
 }
 
 .multi-box-shadow( @shadow1, @shadow2: transparent 0 0 0 ) {
-    	-moz-box-shadow: @shadow1, @shadow2;
-    	-webkit-box-shadow: @shadow1, @shadow2;
-    	box-shadow: @shadow1, @shadow2;
+    -moz-box-shadow: @shadow1, @shadow2;
+    -webkit-box-shadow: @shadow1, @shadow2;
+    box-shadow: @shadow1, @shadow2;
 }
 
 .background-size( 
@@ -92,8 +92,8 @@
 	@switch : 100%
 ) {
 	background-color:  @end;
-    	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
-    	background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
+    background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
 	background-image: -moz-linear-gradient(top, @begin, @end @switch);
 	background-image: -o-linear-gradient(top, @begin, @end @switch);
 	background-image: -khtml-linear-gradient(top, @begin, @end @switch);
@@ -144,4 +144,20 @@
   	font-size: 0px + @size;
   	font-size: 0rem + @size / @font-size;
   	line-height: 0 + round(@line-height / @size*10000) / 10000;
+}
+
+// Below set html to font-size 62.5%
+
+.font-size(@sizeValue){
+  	@remValue: @sizeValue;
+  	@pxValue: (@sizeValue * 10);
+  	font-size: ~"@{pxValue}px"; 
+  	font-size: ~"@{remValue}rem";
+}
+
+.line-height(@sizeValue){
+  	@remValue: @sizeValue;
+  	@pxValue: (@sizeValue * 10);
+  	line-height: ~"@{pxValue}px"; 
+  	line-height: ~"@{remValue}rem";
 }
