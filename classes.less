@@ -129,6 +129,50 @@
 	background-repeat: repeat-x;
 }
 
+.gradient-v-img(
+    @bgimg: "image.jpg",
+    @pos_img: 0 0,
+    @pos_grad: 0 0,
+    @repeat_grad: repeat-x,
+    @repeat_img: no-repeat,
+    @begin: #fff,
+    @end: #000,
+    @switch: 100%
+) {
+	background-color: @end;
+	background-repeat: @repeat_img, @repeat_grad;
+	background-position:@pos_img, @pos_grad;
+    background-image: url(@bgimg), -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end)),;
+    background-image: url(@bgimg), -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), -moz-linear-gradient(top, @begin, @end @switch);
+	background-image: url(@bgimg), -o-linear-gradient(top, @begin, @end @switch);
+	background-image: url(@bgimg), -khtml-linear-gradient(top, @begin, @end @switch);
+	background-image: url(@bgimg), -ms-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), linear-gradient(top, @begin, @end @switch);
+}
+
+.gradient-h-img(
+    @bgimg: "image.jpg",
+    @pos_img: 0 0,
+    @pos_grad: 0 0,
+    @repeat_grad: repeat-x,
+    @repeat_img: no-repeat,
+    @begin: #fff,
+    @end: #000,
+    @switch: 100%
+) {
+	background-color: @end;
+	background-repeat: @repeat_img, @repeat_grad;
+	background-position:@pos_img, @pos_grad;
+    background-image: url(@bgimg), -webkit-gradient(linear, left top, right top, from(@begin), color-stop(@switch, @end)),;
+    background-image: url(@bgimg), -webkit-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), -moz-linear-gradient(left, @begin, @end @switch);
+	background-image: url(@bgimg), -o-linear-gradient(left, @begin, @end @switch);
+	background-image: url(@bgimg), -khtml-linear-gradient(left, @begin, @end @switch);
+	background-image: url(@bgimg), -ms-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), linear-gradient(left, @begin, @end @switch);
+}
+
 .box-sizing( @type : border-box ) {
 	-webkit-box-sizing: @type;
 	   -moz-box-sizing: @type;
@@ -136,6 +180,15 @@
 	 -khtml-box-sizing: @type;
 	    -ms-box-sizing: @type;
 	        box-sizing: @type;		
+}
+
+.background-clip( @type : padding-box ) {
+	-webkit-background-clip: @type;
+	   -moz-background-clip: @type;
+	     -o-background-clip: @type;
+	 -khtml-background-clip: @type;
+	    -ms-background-clip: @type;
+	        background-clip: @type;		
 }
 
 .font-slm( @size ) {
