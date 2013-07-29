@@ -1,17 +1,28 @@
 @import "classes";
 
-@color_1: #000; /* black */
-@twitter: #01ACED; /* blue */
-@facebook: #3D5B98; /* blue */
-@linkedin: #666; /* grey */
+@color_1: #000; // black
+
+@color_error: #f00; // red
+@color_warning: #fc0; // yellow
+@color_notice: #39c; // blue
+@color_success: #090; // green
+
+@twitter: #01ACED; // blue
+@facebook: #3D5B98; // blue
+@linkedin: #666; // grey
+@google: #DC0401; // red
+@youtube: #942422; // red 
+
 @font-size: 16;
 @line-height: 24;
+
 @image_base: "/assets/images/";
 @font_base: "/assets/fonts/";
 
 @font-face {
 font-family: "";
-src: url("@{font_base}") format('truetype');
+src: url("@{font_base}") format("truetype"),
+     url("@{font_base}") format("woff"); 
 font-weight: normal;
 font-style: normal;
 }
@@ -19,5 +30,11 @@ font-style: normal;
 .font_sans { font-family: Arial, Helvetica, sans-serif; }
 .font_serif { font-family: Georgia, "Times New Roman", Times, serif; }
 
+.icon { font-family: "icon"; speak: none; }
+
 .ibt { display: inline-block; vertical-align: top; }
+.ibm { display: inline-block; vertical-align: middle; }
+.ibb { display: inline-block; vertical-align: bottom; }
 .img { display: block; width: 100%; height: auto; }
+
+.ir { display: inline-block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
