@@ -1,3 +1,9 @@
+.opacity(@opacity: 1) {
+	@ieOpacity: @opacity * 100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
+	filter: ~"alpha(opacity=@{ieOpacity})";	
+	opacity: @opacity;
+}
 .rounded( @radius: 3px ) {
 	-webkit-border-radius: @radius;
 	   -moz-border-radius: @radius;
@@ -197,6 +203,35 @@
 	 -khtml-background-clip: @type;
 	    -ms-background-clip: @type;
 	        background-clip: @type;		
+}
+
+.flex-display(@display: flex) {
+display: ~"-webkit-@{display}";
+display: ~"-moz-@{display}";
+display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+display: ~"-ms-@{display}"; // IE11
+display: @display;
+}
+
+.flex-order(@order: 0) {
+-webkit-order: @order;
+-moz-order: @order;
+-ms-order: @order;
+order: @order;
+}
+
+.flex-direction(@direction: row) {
+-webkit-flex-direction: @direction;
+-moz-flex-direction: @direction;
+-ms-flex-direction: @direction;
+flex-direction: @direction;
+}
+
+.flex(@columns: initial) {
+-webkit-flex: @columns;
+-moz-flex: @columns;
+-ms-flex: @columns;
+flex: @columns;
 }
 
 .font-slm( @size ) {
