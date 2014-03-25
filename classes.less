@@ -1,3 +1,19 @@
+.fontface(@fontname, @fontfile, @ext: ttf, @type: truetype) {
+	font-family: '@{fontname}';
+	src: url('@{font_base}@{fontfile}.@{ext}') format('@{type}'),
+	     url('@{font_base}@{fontfile}.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.fontface-ie(@fontname, @fontfile) {
+	font-family: '@{fontname}';
+	src: url('@{font_base}@{fontfile}.eot');
+	src: url('@{font_base}@{fontfile}.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .opacity(@opacity: 1) {
 	@ieOpacity: @opacity * 100;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
@@ -6,30 +22,15 @@
 }
 
 .rounded( @radius: 3px ) {
-	-webkit-border-radius: @radius;
-	   -moz-border-radius: @radius;
-	     -o-border-radius: @radius;
-	 -khtml-border-radius: @radius;
-	 	-ms-border-radius: @radius;
-	        border-radius: @radius;		
+	border-radius: @radius;		
 }
 
 .border-radius( @topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0 ) {
-	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
-	   -moz-border-radius: @topleft @topright @bottomright @bottomleft;
-	     -o-border-radius: @topleft @topright @bottomright @bottomleft;
-	 -khtml-border-radius: @topleft @topright @bottomright @bottomleft;
-	    -ms-border-radius: @topleft @topright @bottomright @bottomleft;
-	        border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
 }
 
 .outline-radius( @radius: 3px ) {
-	-webkit-outline-radius: @radius;
-	   -moz-outline-radius: @radius;
-	     -o-outline-radius: @radius;
-	 -khtml-outline-radius: @radius;
-	    -ms-outline-radius: @radius;
-	        outline-radius: @radius;		
+	outline-radius: @radius;		
 }
 
 .box-shadow( 
@@ -40,11 +41,7 @@
 	@color : rgba(0,0,0,.6)
 ) {
 	-webkit-box-shadow: @x @y @blur @spread @color;
-	   -moz-box-shadow: @x @y @blur @spread @color;	
-	   	 -o-box-shadow: @x @y @blur @spread @color;
-	 -khtml-box-shadow: @x @y @blur @spread @color;
-	   	-ms-box-shadow: @x @y @blur @spread @color;
-			box-shadow: @x @y @blur @spread @color;	
+	box-shadow: @x @y @blur @spread @color;	
 }
 
 .box-shadow-inset( 
@@ -55,17 +52,12 @@
 	@color : rgba(0,0,0,.6)
 ) {
 	-webkit-box-shadow: @x @y @blur @spread @color inset;
-	   -moz-box-shadow: @x @y @blur @spread @color inset;	
-	   	 -o-box-shadow: @x @y @blur @spread @color inset;
-	 -khtml-box-shadow: @x @y @blur @spread @color inset;
-	   	-ms-box-shadow: @x @y @blur @spread @color inset;
 			box-shadow: @x @y @blur @spread @color inset;	
 }
 
 .multi-box-shadow( @shadow1, @shadow2: transparent 0 0 0 ) {
-    -moz-box-shadow: @shadow1, @shadow2;
-    -webkit-box-shadow: @shadow1, @shadow2;
-    box-shadow: @shadow1, @shadow2;
+	-webkit-box-shadow: @shadow1, @shadow2;
+	box-shadow: @shadow1, @shadow2;
 }
 
 .background-size( 
@@ -101,15 +93,15 @@
 	     -o-transition: @what @length @easing;
 	 -khtml-transition: @what @length @easing;
 	    -ms-transition: @what @length @easing;
-		  	transition: @what @length @easing;			
+			transition: @what @length @easing;			
 }
 
 .transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
-    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
-    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	-ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+	transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
 }
 
 .gradient-v (
@@ -123,15 +115,15 @@
 
 	background-color: @end;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
-    background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: -webkit-linear-gradient(top,  @begin 0%,@end @switch);
 	background-image: -moz-linear-gradient(top, @begin, @end @switch);
 	background-image: -o-linear-gradient(top, @begin, @end @switch);
 	background-image: -khtml-linear-gradient(top, @begin, @end @switch);
 	background-image: -ms-linear-gradient(top,  @begin 0%,@end @switch);
 	background-repeat: repeat-x;
- 
+
 	.ie & {
-	background: transparent;
+	background-color: transparent;
 	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=0)";
 	}
 }
@@ -156,27 +148,27 @@
 	background-repeat: repeat-x;
 
 	.ie & {
-	background: transparent;
+	background-color: transparent;
 	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=1)";
 	}
 
 }
 
 .gradient-v-img(
-    @bgimg: "image.jpg",
-    @pos_img: 0 0,
-    @pos_grad: 0 0,
-    @repeat_grad: repeat-x,
-    @repeat_img: no-repeat,
-    @begin: #fff,
-    @end: #000,
-    @switch: 100%
+	@bgimg: "image.jpg",
+	@pos_img: 0 0,
+	@pos_grad: 0 0,
+	@repeat_grad: repeat-x,
+	@repeat_img: no-repeat,
+	@begin: #fff,
+	@end: #000,
+	@switch: 100%
 ) {
 	background-color: @end;
 	background-repeat: @repeat_img, @repeat_grad;
 	background-position:@pos_img, @pos_grad;
-    background-image: url(@bgimg), -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end)),;
-    background-image: url(@bgimg), -webkit-linear-gradient(top,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end)),;
+	background-image: url(@bgimg), -webkit-linear-gradient(top,  @begin 0%,@end @switch);
 	background-image: url(@bgimg), -moz-linear-gradient(top, @begin, @end @switch);
 	background-image: url(@bgimg), -o-linear-gradient(top, @begin, @end @switch);
 	background-image: url(@bgimg), -khtml-linear-gradient(top, @begin, @end @switch);
@@ -185,20 +177,20 @@
 }
 
 .gradient-h-img(
-    @bgimg: "image.jpg",
-    @pos_img: 0 0,
-    @pos_grad: 0 0,
-    @repeat_grad: repeat-x,
-    @repeat_img: no-repeat,
-    @begin: #fff,
-    @end: #000,
-    @switch: 100%
+	@bgimg: "image.jpg",
+	@pos_img: 0 0,
+	@pos_grad: 0 0,
+	@repeat_grad: repeat-x,
+	@repeat_img: no-repeat,
+	@begin: #fff,
+	@end: #000,
+	@switch: 100%
 ) {
 	background-color: @end;
 	background-repeat: @repeat_img, @repeat_grad;
 	background-position:@pos_img, @pos_grad;
-    background-image: url(@bgimg), -webkit-gradient(linear, left top, right top, from(@begin), color-stop(@switch, @end)),;
-    background-image: url(@bgimg), -webkit-linear-gradient(left,  @begin 0%,@end @switch);
+	background-image: url(@bgimg), -webkit-gradient(linear, left top, right top, from(@begin), color-stop(@switch, @end)),;
+	background-image: url(@bgimg), -webkit-linear-gradient(left,  @begin 0%,@end @switch);
 	background-image: url(@bgimg), -moz-linear-gradient(left, @begin, @end @switch);
 	background-image: url(@bgimg), -o-linear-gradient(left, @begin, @end @switch);
 	background-image: url(@bgimg), -khtml-linear-gradient(left, @begin, @end @switch);
@@ -225,65 +217,65 @@
 }
 
 .flex-display(@display: flex) {
-display: ~"-webkit-@{display}";
-display: ~"-moz-@{display}";
-display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
-display: ~"-ms-@{display}"; // IE11
-display: @display;
+	display: ~"-webkit-@{display}";
+	display: ~"-moz-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
 }
 
 .flex-order(@order: 0) {
--webkit-order: @order;
--moz-order: @order;
--ms-order: @order;
-order: @order;
+	-webkit-order: @order;
+	-moz-order: @order;
+	-ms-order: @order;
+	order: @order;
 }
 
 .flex-direction(@direction: row) {
--webkit-flex-direction: @direction;
--moz-flex-direction: @direction;
--ms-flex-direction: @direction;
-flex-direction: @direction;
+	-webkit-flex-direction: @direction;
+	-moz-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+	flex-direction: @direction;
 }
 
 .flex(@columns: initial) {
--webkit-flex: @columns;
--moz-flex: @columns;
--ms-flex: @columns;
-flex: @columns;
+	-webkit-flex: @columns;
+	-moz-flex: @columns;
+	-ms-flex: @columns;
+	flex: @columns;
 }
 
 .font-slm( @size ) {
-  	font-size: 0px + @size;
-  	font-size: 0rem + @size / @font-size;
-  	line-height: 0 + round(@line-height / @size*10000) / 10000;
-  	margin-bottom: 0px + @line-height;
+	font-size: 0px + @size;
+	font-size: 0rem + @size / @font-size;
+	line-height: 0 + round(@line-height / @size*10000) / 10000;
+	margin-bottom: 0px + @line-height;
 	margin-bottom: 0rem + (@line-height / @doc-font-size);
 }
 
 .font-s( @size ) {
-  	font-size: 0px + @size;
-  	font-size: 0rem + @size / @font-size;
+	font-size: 0px + @size;
+	font-size: 0rem + @size / @font-size;
 }
 
 .font-sl( @size ) {
-  	font-size: 0px + @size;
-  	font-size: 0rem + @size / @font-size;
-  	line-height: 0 + round(@line-height / @size*10000) / 10000;
+	font-size: 0px + @size;
+	font-size: 0rem + @size / @font-size;
+	line-height: 0 + round(@line-height / @size*10000) / 10000;
 }
 
 // Below set html to font-size 62.5%
 
 .font-size(@sizeValue){
-  	@remValue: @sizeValue;
-  	@pxValue: (@sizeValue * 10);
-  	font-size: ~"@{pxValue}px"; 
-  	font-size: ~"@{remValue}rem";
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px"; 
+	font-size: ~"@{remValue}rem";
 }
 
 .line-height(@sizeValue){
-  	@remValue: @sizeValue;
-  	@pxValue: (@sizeValue * 10);
-  	line-height: ~"@{pxValue}px"; 
-  	line-height: ~"@{remValue}rem";
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	line-height: ~"@{pxValue}px"; 
+	line-height: ~"@{remValue}rem";
 }
