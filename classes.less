@@ -1,7 +1,7 @@
 .fontface(@fontname, @fontfile, @ext: ttf, @type: truetype) {
 	font-family: '@{fontname}';
-	src: url('@{font_base}@{fontfile}.@{ext}') format('@{type}'),
-	     url('@{font_base}@{fontfile}.woff') format('woff');
+	src: url('@{font_base}@{fontfile}.woff') format('woff'),
+	     url('@{font_base}@{fontfile}.@{ext}') format('@{type}');
 	font-weight: normal;
 	font-style: normal;
 }
