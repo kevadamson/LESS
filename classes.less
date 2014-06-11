@@ -1,17 +1,17 @@
-.fontface(@fontname, @fontfile, @ext: ttf, @type: truetype) {
+.fontface(@fontname, @fontfile, @weight: normal, @style: normal, @ext: ttf, @type: truetype) {
 	font-family: '@{fontname}';
 	src: url('@{font_base}@{fontfile}.@{ext}') format('@{type}'),
 	     url('@{font_base}@{fontfile}.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+	font-weight: @weight;
+	font-style: @style;
 }
 
-.fontface-ie(@fontname, @fontfile) {
+.fontface-ie(@fontname, @fontfile, @weight: normal, @style: normal) {
 	font-family: '@{fontname}';
 	src: url('@{font_base}@{fontfile}.eot');
 	src: url('@{font_base}@{fontfile}.eot?#iefix') format('embedded-opentype');
-	font-weight: normal;
-	font-style: normal;
+	font-weight: @weight;
+	font-style: @style;
 }
 
 .font-smoothing( @font-smoothing : antialiased ) {
@@ -92,7 +92,7 @@
 
 .transition(
 	@what : all,
-	@length : 1s,
+	@length : .3s,
 	@easing : ease-in-out
 ) {
 	-webkit-transition: @what @length @easing;
