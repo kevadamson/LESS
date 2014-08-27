@@ -6,6 +6,14 @@
 	font-style: @style;
 }
 
+.fontface-svg(@fontname, @fontfile, @weight: normal, @style: normal, @ext: ttf, @type: truetype) {
+	font-family: '@{fontname}';
+	src: url('@{font_base}@{fontfile}.svg') format('svg'),
+		 url('@{font_base}@{fontfile}.@{ext}') format('@{type}');
+	font-weight: @weight;
+	font-style: @style;
+}
+
 .fontface-ie(@fontname, @fontfile, @weight: normal, @style: normal) {
 	font-family: '@{fontname}';
 	src: url('@{font_base}@{fontfile}.eot');
@@ -92,7 +100,7 @@
 
 .transition(
 	@what : all,
-	@length : .2s,
+	@length : .3s,
 	@easing : ease-in-out
 ) {
 	-webkit-transition: @what @length @easing;
@@ -320,4 +328,11 @@
 	@pxValue: (@sizeValue * 10);
 	line-height: ~"@{pxValue}px"; 
 	line-height: ~"@{remValue}rem";
+}
+
+.placeholder(@color){
+	&::-webkit-input-placeholder { color: lighten(@color,45%); }
+	&:-moz-placeholder { color: @color; }
+	&::-moz-placeholder { color: @color; }
+	&:-ms-input-placeholder { color: lighten(@color,45%); }
 }
