@@ -45,6 +45,9 @@
 }
 
 .outline-radius( @radius: 3px ) {
+	-webkit-outline-radius: @radius;
+	-moz-outline-radius: @radius;
+	-ms-outline-radius: @radius;
 	outline-radius: @radius;		
 }
 
@@ -335,4 +338,10 @@
 	&:-moz-placeholder { color: @color; }
 	&::-moz-placeholder { color: @color; }
 	&:-ms-input-placeholder { color: lighten(@color,45%); }
+}
+
+.backface(){
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
