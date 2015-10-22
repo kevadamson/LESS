@@ -1,347 +1,358 @@
 .fontface(@fontname, @fontfile, @weight: normal, @style: normal, @ext: ttf, @type: truetype) {
-	font-family: '@{fontname}';
-	src: url('@{font_base}@{fontfile}.@{ext}') format('@{type}'),
-	     url('@{font_base}@{fontfile}.woff') format('woff');
-	font-weight: @weight;
-	font-style: @style;
+    font-family: '@{fontname}';
+    src: url('@{font_base}@{fontfile}.@{ext}') format('@{type}'),
+         url('@{font_base}@{fontfile}.woff') format('woff');
+    font-weight: @weight;
+    font-style: @style;
 }
 
 .fontface-svg(@fontname, @fontfile, @weight: normal, @style: normal, @ext: ttf, @type: truetype) {
-	font-family: '@{fontname}';
-	src: url('@{font_base}@{fontfile}.svg') format('svg'),
-		 url('@{font_base}@{fontfile}.@{ext}') format('@{type}');
-	font-weight: @weight;
-	font-style: @style;
+    font-family: '@{fontname}';
+    src: url('@{font_base}@{fontfile}.svg') format('svg'),
+         url('@{font_base}@{fontfile}.@{ext}') format('@{type}');
+    font-weight: @weight;
+    font-style: @style;
 }
 
 .fontface-ie(@fontname, @fontfile, @weight: normal, @style: normal) {
-	font-family: '@{fontname}';
-	src: url('@{font_base}@{fontfile}.eot');
-	src: url('@{font_base}@{fontfile}.eot?#iefix') format('embedded-opentype');
-	font-weight: @weight;
-	font-style: @style;
+    font-family: '@{fontname}';
+    src: url('@{font_base}@{fontfile}.eot');
+    src: url('@{font_base}@{fontfile}.eot?#iefix') format('embedded-opentype');
+    font-weight: @weight;
+    font-style: @style;
 }
 
 .font-smoothing( @font-smoothing : antialiased ) {
-	-webkit-font-smoothing: @font-smoothing;
-	-moz-font-smoothing: @font-smoothing;
-	-ms-font-smoothing: @font-smoothing;
-	font-smoothing: @font-smoothing;
+    -webkit-font-smoothing: @font-smoothing;
+    -moz-font-smoothing: @font-smoothing;
+    -ms-font-smoothing: @font-smoothing;
+    font-smoothing: @font-smoothing;
 }
 
 .opacity(@opacity: 1) {
-	@ieOpacity: @opacity * 100;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
-	filter: ~"alpha(opacity=@{ieOpacity})";	
-	opacity: @opacity;
+    @ieOpacity: @opacity * 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
+    filter: ~"alpha(opacity=@{ieOpacity})";
+    opacity: @opacity;
 }
 
 .rounded( @radius: 3px ) {
-	border-radius: @radius;		
+    border-radius: @radius;
 }
 
 .border-radius( @topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0 ) {
-	border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
 }
 
 .outline-radius( @radius: 3px ) {
-	-webkit-outline-radius: @radius;
-	-moz-outline-radius: @radius;
-	-ms-outline-radius: @radius;
-	outline-radius: @radius;		
+    -webkit-outline-radius: @radius;
+    -moz-outline-radius: @radius;
+    -ms-outline-radius: @radius;
+    outline-radius: @radius;
 }
 
-.box-shadow( 
-	@x : 2px, 
-	@y : 2px, 
-	@blur : 5px, 
-	@spread : 0, 
-	@color : rgba(0,0,0,.6)
+.box-shadow(
+    @x : 2px,
+    @y : 2px,
+    @blur : 5px,
+    @spread : 0,
+    @color : rgba(0,0,0,.6)
 ) {
-	-webkit-box-shadow: @x @y @blur @spread @color;
-	box-shadow: @x @y @blur @spread @color;	
+    -webkit-box-shadow: @x @y @blur @spread @color;
+    box-shadow: @x @y @blur @spread @color;
 }
 
-.box-shadow-inset( 
-	@x : 2px, 
-	@y : 2px, 
-	@blur : 5px, 
-	@spread : 0, 
-	@color : rgba(0,0,0,.6)
+.box-shadow-inset(
+    @x : 2px,
+    @y : 2px,
+    @blur : 5px,
+    @spread : 0,
+    @color : rgba(0,0,0,.6)
 ) {
-	-webkit-box-shadow: @x @y @blur @spread @color inset;
-			box-shadow: @x @y @blur @spread @color inset;	
+    -webkit-box-shadow: @x @y @blur @spread @color inset;
+            box-shadow: @x @y @blur @spread @color inset;
 }
 
 .multi-box-shadow( @shadow1, @shadow2: transparent 0 0 0 ) {
-	-webkit-box-shadow: @shadow1, @shadow2;
-	box-shadow: @shadow1, @shadow2;
+    -webkit-box-shadow: @shadow1, @shadow2;
+    box-shadow: @shadow1, @shadow2;
 }
 
-.background-size( 
-	@x : auto, 
-	@y : auto 
+.background-size(
+    @x : auto,
+    @y : auto
 ) {
-	-moz-background-size: @x @y;
-	-webkit-background-size: @x @y;
-	-o-background-size: @x @y;
-	-khtml-background-size: @x @y;
-	-ms-background-size: @x @y;
-	background-size: @x @y;	
+    -moz-background-size: @x @y;
+    -webkit-background-size: @x @y;
+    -o-background-size: @x @y;
+    -khtml-background-size: @x @y;
+    -ms-background-size: @x @y;
+    background-size: @x @y;
 }
 
-.background-cover( 
-	@x : cover 
+.background-cover(
+    @x : cover
 ) {
-	-moz-background-size: @x;
-	-webkit-background-size: @x;
-	-o-background-size: @x;
-	-khtml-background-size: @x;
-	-ms-background-size: @x;
-	background-size: @x;	
+    -moz-background-size: @x;
+    -webkit-background-size: @x;
+    -o-background-size: @x;
+    -khtml-background-size: @x;
+    -ms-background-size: @x;
+    background-size: @x;
 }
 
 .transition(
-	@what : all,
-	@length : .3s,
-	@easing : ease-in-out
+    @what : all,
+    @length : .3s,
+    @easing : ease-in-out
 ) {
-	-webkit-transition: @what @length @easing;
-	   -moz-transition: @what @length @easing;
-	     -o-transition: @what @length @easing;
-	 -khtml-transition: @what @length @easing;
-	    -ms-transition: @what @length @easing;
-			transition: @what @length @easing;			
+    -webkit-transition: @what @length @easing;
+       -moz-transition: @what @length @easing;
+         -o-transition: @what @length @easing;
+     -khtml-transition: @what @length @easing;
+        -ms-transition: @what @length @easing;
+            transition: @what @length @easing;
 }
 
 .transform (@string) {
-	-webkit-transform: @string;
-	-moz-transform: @string;
-	-o-transform: @string;
-	-ms-transform: @string;
-	transform: @string;
+    -webkit-transform: @string;
+    -moz-transform: @string;
+    -o-transform: @string;
+    -ms-transform: @string;
+    transform: @string;
 }
 
 .origin (@string) {
-	-webkit-transform-origin: @string;
-	-moz-transform-origin: @string;
-	-o-transform-origin: @string;
-	-ms-transform-origin: @string;
-	transform-origin: @string;
+    -webkit-transform-origin: @string;
+    -moz-transform-origin: @string;
+    -o-transform-origin: @string;
+    -ms-transform-origin: @string;
+    transform-origin: @string;
 }
 
 .gradient-v (
-	@begin: black,
-	@end: white,
-	@start : 0%,
-	@finish : 100%,
-	@ie_ver : ~""
+    @begin: black,
+    @end: white,
+    @start : 0%,
+    @finish : 100%,
+    @ie_ver : ~""
 ) {
 
-	@iebegin: argb(@begin);
-	@ieend: argb(@end);
+    @iebegin: argb(@begin);
+    @ieend: argb(@end);
 
-	@dataPrefix: ~"url(data:image/svg+xml;base64,";
-	@dataSuffix: ~")";
-	@dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="0%" y1="@{start}" x2="0%" y2="@{finish}"><stop stop-color="@{begin}" offset="0"/><stop stop-color="@{end}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
-	@b64Out: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataPrefix}','@{dataContent}','@{dataSuffix}')`;
+    @dataPrefix: ~"url(data:image/svg+xml;base64,";
+    @dataSuffix: ~")";
+    @dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="0%" y1="@{start}" x2="0%" y2="@{finish}"><stop stop-color="@{begin}" offset="0"/><stop stop-color="@{end}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
+    @b64Out: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataPrefix}','@{dataContent}','@{dataSuffix}')`;
 
-	background-color: @end; 
-	background-image: ~"@{b64Out}"; // IE9
-	background-image: -webkit-gradient(linear, left top, left bottom, from(@start, @begin), color-stop(@finish, @end));
-	background-image: -webkit-linear-gradient(top, @begin @start, @end @finish);
-	background-image: -moz-linear-gradient(top, @begin @start, @end @finish);
-	background-image: -o-linear-gradient(top, @begin @start, @end @finish);
-	background-image: -khtml-linear-gradient(top, @begin @start, @end @finish);
-	background-image: -ms-linear-gradient(top, @begin @start, @end @finish);
-	background-image: linear-gradient(to bottom, @begin @start, @end @finish);
-	background-repeat: repeat-x;
+    background-color: @end;
+    background-image: ~"@{b64Out}"; // IE9
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@start, @begin), color-stop(@finish, @end));
+    background-image: -webkit-linear-gradient(top, @begin @start, @end @finish);
+    background-image: -moz-linear-gradient(top, @begin @start, @end @finish);
+    background-image: -o-linear-gradient(top, @begin @start, @end @finish);
+    background-image: -khtml-linear-gradient(top, @begin @start, @end @finish);
+    background-image: -ms-linear-gradient(top, @begin @start, @end @finish);
+    background-image: linear-gradient(to bottom, @begin @start, @end @finish);
+    background-repeat: repeat-x;
 
-	.ie@{ie_ver} & {
-	background-color: transparent;
-	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=0)";
-	}
+    .ie@{ie_ver} & {
+    background-color: transparent;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=0)";
+    }
 
 }
 
 .gradient-h(
-	@begin: black, 
-	@end: white,
-	@start : 0%,
-	@finish : 100%,
-	@ie_ver : ~""
+    @begin: black,
+    @end: white,
+    @start : 0%,
+    @finish : 100%,
+    @ie_ver : ~""
 ) {
 
-	@iebegin: argb(@begin);
-	@ieend: argb(@end);
+    @iebegin: argb(@begin);
+    @ieend: argb(@end);
 
-	@dataPrefix: ~"url(data:image/svg+xml;base64,";
-	@dataSuffix: ~")";
-	@dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="@{start}" y1="0%" x2="@{finish}" y2="0%"><stop stop-color="@{begin}" offset="0"/><stop stop-color="@{end}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
-	@b64Out: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataPrefix}','@{dataContent}','@{dataSuffix}')`; 
+    @dataPrefix: ~"url(data:image/svg+xml;base64,";
+    @dataSuffix: ~")";
+    @dataContent: ~'<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><linearGradient id="g743" gradientUnits="userSpaceOnUse" x1="@{start}" y1="0%" x2="@{finish}" y2="0%"><stop stop-color="@{begin}" offset="0"/><stop stop-color="@{end}" offset="1"/></linearGradient><rect x="0" y="0" width="1" height="1" fill="url(#g743)"/></svg>';
+    @b64Out: ~`(function(a,b,c){function e(a){a=a.replace(/\r\n/g,'\n');var b='';for(var c=0;c<a.length;c++){var d=a.charCodeAt(c);if(d<128){b+=String.fromCharCode(d)}else if(d>127&&d<2048){b+=String.fromCharCode(d>>6|192);b+=String.fromCharCode(d&63|128)}else{b+=String.fromCharCode(d>>12|224);b+=String.fromCharCode(d>>6&63|128);b+=String.fromCharCode(d&63|128)}}return b}function f(a){var b='';var c,f,g,h,i,j,l;var m=0;a=e(a);while(m<a.length){c=a.charCodeAt(m++);f=a.charCodeAt(m++);g=a.charCodeAt(m++);h=c>>2;i=(c&3)<<4|f>>4;j=(f&15)<<2|g>>6;l=g&63;if(isNaN(f)){j=l=64}else if(isNaN(g)){l=64}b=b+d.charAt(h)+d.charAt(i)+d.charAt(j)+d.charAt(l)}return b}var d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';return a+f(b)+c})('@{dataPrefix}','@{dataContent}','@{dataSuffix}')`;
 
-	background-color: @begin;
-	background-image: ~"@{b64Out}"; // IE9
-	background-image: -webkit-gradient(linear, left top, right top, color-stop(@start, @begin), color-stop(@finish, @end));
-	background-image: -webkit-linear-gradient(left, @begin @start, @end @finish);
-	background-image: -moz-linear-gradient(left, @begin @start, @end @finish);
-	background-image: -o-linear-gradient(left, @begin @start, @end @finish);
-	background-image: -khtml-linear-gradient(left, @begin @start, @end @finish);
-	background-image: -ms-linear-gradient(left, @begin @start, @end @finish);
-	background-image: linear-gradient(to right, @begin @start, @end @finish);
-	background-repeat: repeat-y;
+    background-color: @begin;
+    background-image: ~"@{b64Out}"; // IE9
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(@start, @begin), color-stop(@finish, @end));
+    background-image: -webkit-linear-gradient(left, @begin @start, @end @finish);
+    background-image: -moz-linear-gradient(left, @begin @start, @end @finish);
+    background-image: -o-linear-gradient(left, @begin @start, @end @finish);
+    background-image: -khtml-linear-gradient(left, @begin @start, @end @finish);
+    background-image: -ms-linear-gradient(left, @begin @start, @end @finish);
+    background-image: linear-gradient(to right, @begin @start, @end @finish);
+    background-repeat: repeat-y;
 
-	.ie@{ie_ver} & {
-	background-color: transparent;
-	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=1)";
-	}
+    .ie@{ie_ver} & {
+    background-color: transparent;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{iebegin}',endColorstr='@{ieend}',GradientType=1)";
+    }
 
 }
 
 .gradient-v-img(
-	@bgimg: "image.jpg",
-	@pos_img: 0 0,
-	@pos_grad: 0 0,
-	@repeat_grad: repeat-x,
-	@repeat_img: no-repeat,
-	@begin: #fff,
-	@end: #000,
-	@start: 0%,
-	@finish: 100%
+    @bgimg: "image.jpg",
+    @pos_img: 0 0,
+    @pos_grad: 0 0,
+    @repeat_grad: repeat-x,
+    @repeat_img: no-repeat,
+    @begin: #fff,
+    @end: #000,
+    @start: 0%,
+    @finish: 100%
 ) {
-	background-color: @end;
-	background-repeat: @repeat_img, @repeat_grad;
-	background-position:@pos_img, @pos_grad;
-	background-image: url(@bgimg), -webkit-gradient(linear, left top, left bottom, from(@start, @begin), color-stop(@finish, @end));
-	background-image: url(@bgimg), -webkit-linear-gradient(top, @begin @start, @end @finish);
-	background-image: url(@bgimg), -moz-linear-gradient(top, @begin @start, @end @finish);
-	background-image: url(@bgimg), -o-linear-gradient(top, @begin @start, @end @finish);
-	background-image: url(@bgimg), -khtml-linear-gradient(top, @begin @start, @end @finish);
-	background-image: url(@bgimg), -ms-linear-gradient(top, @begin @start, @end @finish);
-	background-image: url(@bgimg), linear-gradient(to bottom, @begin @start, @end @finish); 
+    background-color: @end;
+    background-repeat: @repeat_img, @repeat_grad;
+    background-position:@pos_img, @pos_grad;
+    background-image: url(@bgimg), -webkit-gradient(linear, left top, left bottom, from(@start, @begin), color-stop(@finish, @end));
+    background-image: url(@bgimg), -webkit-linear-gradient(top, @begin @start, @end @finish);
+    background-image: url(@bgimg), -moz-linear-gradient(top, @begin @start, @end @finish);
+    background-image: url(@bgimg), -o-linear-gradient(top, @begin @start, @end @finish);
+    background-image: url(@bgimg), -khtml-linear-gradient(top, @begin @start, @end @finish);
+    background-image: url(@bgimg), -ms-linear-gradient(top, @begin @start, @end @finish);
+    background-image: url(@bgimg), linear-gradient(to bottom, @begin @start, @end @finish);
 }
 
 .gradient-h-img(
-	@bgimg: "image.jpg",
-	@pos_img: 0 0,
-	@pos_grad: 0 0,
-	@repeat_grad: repeat-y,
-	@repeat_img: no-repeat,
-	@begin: #fff,
-	@end: #000,
-	@start: 0%,
-	@finish: 100%
+    @bgimg: "image.jpg",
+    @pos_img: 0 0,
+    @pos_grad: 0 0,
+    @repeat_grad: repeat-y,
+    @repeat_img: no-repeat,
+    @begin: #fff,
+    @end: #000,
+    @start: 0%,
+    @finish: 100%
 ) {
-	background-color: @end;
-	background-repeat: @repeat_img, @repeat_grad;
-	background-position:@pos_img, @pos_grad;
-	background-image: url(@bgimg), -webkit-gradient(linear, left top, right top, color-stop(@start, @begin), color-stop(@finish, @end));
-	background-image: url(@bgimg), -webkit-linear-gradient(left, @begin @start, @end @finish);
-	background-image: url(@bgimg), -moz-linear-gradient(left, @begin, @end @finish);
-	background-image: url(@bgimg), -o-linear-gradient(left, @begin @start, @end @finish);
-	background-image: url(@bgimg), -khtml-linear-gradient(left, @begin @start, @end @finish);
-	background-image: url(@bgimg), -ms-linear-gradient(left, @begin @start, @end @finish);
-	background-image: url(@bgimg), linear-gradient(to right, @begin @start, @end @finish);
+    background-color: @end;
+    background-repeat: @repeat_img, @repeat_grad;
+    background-position:@pos_img, @pos_grad;
+    background-image: url(@bgimg), -webkit-gradient(linear, left top, right top, color-stop(@start, @begin), color-stop(@finish, @end));
+    background-image: url(@bgimg), -webkit-linear-gradient(left, @begin @start, @end @finish);
+    background-image: url(@bgimg), -moz-linear-gradient(left, @begin, @end @finish);
+    background-image: url(@bgimg), -o-linear-gradient(left, @begin @start, @end @finish);
+    background-image: url(@bgimg), -khtml-linear-gradient(left, @begin @start, @end @finish);
+    background-image: url(@bgimg), -ms-linear-gradient(left, @begin @start, @end @finish);
+    background-image: url(@bgimg), linear-gradient(to right, @begin @start, @end @finish);
 }
 
 .box-sizing( @type : border-box ) {
-	-webkit-box-sizing: @type;
-	   -moz-box-sizing: @type;
-	     -o-box-sizing: @type;
-	 -khtml-box-sizing: @type;
-	    -ms-box-sizing: @type;
-	        box-sizing: @type;		
+    -webkit-box-sizing: @type;
+       -moz-box-sizing: @type;
+         -o-box-sizing: @type;
+     -khtml-box-sizing: @type;
+        -ms-box-sizing: @type;
+            box-sizing: @type;
 }
 
 .background-clip( @type : padding-box ) {
-	-webkit-background-clip: @type;
-	   -moz-background-clip: @type;
-	     -o-background-clip: @type;
-	 -khtml-background-clip: @type;
-	    -ms-background-clip: @type;
-	        background-clip: @type;		
+    -webkit-background-clip: @type;
+       -moz-background-clip: @type;
+         -o-background-clip: @type;
+     -khtml-background-clip: @type;
+        -ms-background-clip: @type;
+            background-clip: @type;
 }
 
 .flex-display(@display: flex) {
-	display: ~"-webkit-@{display}";
-	display: ~"-moz-@{display}";
-	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
-	display: ~"-ms-@{display}"; // IE11
-	display: @display;
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
 }
 
 .flex-order(@order: 0) {
-	-webkit-order: @order;
-	-moz-order: @order;
-	-ms-order: @order;
-	order: @order;
+    -webkit-order: @order;
+    -moz-order: @order;
+    -ms-order: @order;
+    order: @order;
 }
 
 .flex-flow(@flow: row wrap) {
-	-webkit-flex-flow: @flow;
-	-moz-flex-flow: @flow;
-	-ms-flex-flowr: @flow;
-	flex-flow: @flow;
+    -webkit-flex-flow: @flow;
+    -moz-flex-flow: @flow;
+    -ms-flex-flowr: @flow;
+    flex-flow: @flow;
 }
 
 .flex-direction(@direction: row) {
-	-webkit-flex-direction: @direction;
-	-moz-flex-direction: @direction;
-	-ms-flex-direction: @direction;
-	flex-direction: @direction;
+    -webkit-flex-direction: @direction;
+    -moz-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
 }
 
 .flex(@columns: initial) {
-	-webkit-flex: @columns;
-	-moz-flex: @columns;
-	-ms-flex: @columns;
-	flex: @columns;
+    -webkit-flex: @columns;
+    -moz-flex: @columns;
+    -ms-flex: @columns;
+    flex: @columns;
 }
 
 .font-slm( @size ) {
-	font-size: 0px + @size;
-	font-size: 0rem + @size / @font-size;
-	line-height: 0 + round(@line-height / @size*10000) / 10000;
-	margin-bottom: 0px + @line-height;
-	margin-bottom: 0rem + (@line-height / @doc-font-size);
+    font-size: 0px + @size;
+    font-size: 0rem + @size / @font-size;
+    line-height: 0 + round(@line-height / @size*10000) / 10000;
+    margin-bottom: 0px + @line-height;
+    margin-bottom: 0rem + (@line-height / @doc-font-size);
 }
 
 .font-s( @size ) {
-	font-size: 0px + @size;
-	font-size: 0rem + @size / @font-size;
+    font-size: 0px + @size;
+    font-size: 0rem + @size / @font-size;
 }
 
 .font-sl( @size ) {
-	font-size: 0px + @size;
-	font-size: 0rem + @size / @font-size;
-	line-height: 0 + round(@line-height / @size*10000) / 10000;
+    font-size: 0px + @size;
+    font-size: 0rem + @size / @font-size;
+    line-height: 0 + round(@line-height / @size*10000) / 10000;
 }
 
 // Below set html to font-size 62.5%
 
 .font-size(@sizeValue){
-	@remValue: @sizeValue;
-	@pxValue: (@sizeValue * 10);
-	font-size: ~"@{pxValue}px"; 
-	font-size: ~"@{remValue}rem";
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
 }
 
 .line-height(@sizeValue){
-	@remValue: @sizeValue;
-	@pxValue: (@sizeValue * 10);
-	line-height: ~"@{pxValue}px"; 
-	line-height: ~"@{remValue}rem";
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    line-height: ~"@{pxValue}px";
+    line-height: ~"@{remValue}rem";
+}
+
+.font-combo(@sizeValue){
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    @remValueLh: @sizeValue + 1 - 0.1;
+    @pxValueLh: (@sizeValue * 10 + 10 - 1);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+    line-height: ~"@{pxValueLh}px";
+    line-height: ~"@{remValueLh}rem";
 }
 
 .placeholder(@color){
-	&::-webkit-input-placeholder { color: lighten(@color,45%); }
-	&:-moz-placeholder { color: @color; }
-	&::-moz-placeholder { color: @color; }
-	&:-ms-input-placeholder { color: lighten(@color,45%); }
+    &::-webkit-input-placeholder { color: lighten(@color,45%); }
+    &:-moz-placeholder { color: @color; }
+    &::-moz-placeholder { color: @color; }
+    &:-ms-input-placeholder { color: lighten(@color,45%); }
 }
 
 .backface(){
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
